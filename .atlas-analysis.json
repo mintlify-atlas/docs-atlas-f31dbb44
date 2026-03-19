@@ -1,0 +1,145 @@
+{
+  "projectType": "saas",
+  "projectName": "Cafe Adriani",
+  "projectDescription": "A full-featured coffee business management SaaS platform for handling clients, invoices, payments, inventory, collections, and administration with real-time notifications.",
+  "theme": "almond",
+  "primaryColor": "#d7a210",
+  "lightColor": "#7c6c24",
+  "darkColor": "#0a0805",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Overview",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "getting-started/quickstart", "getting-started/authentication"]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/dashboard",
+              "concepts/clients",
+              "concepts/invoices",
+              "concepts/payments",
+              "concepts/inventory",
+              "concepts/products"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Features",
+        "groups": [
+          {
+            "group": "Business Operations",
+            "pages": [
+              "features/dashboard",
+              "features/clients",
+              "features/invoices",
+              "features/payments",
+              "features/payment-accounts"
+            ]
+          },
+          {
+            "group": "Stock & Products",
+            "pages": [
+              "features/products",
+              "features/inventory"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "features/administration",
+              "features/collections",
+              "features/users"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "reference/overview",
+              "reference/clients",
+              "reference/invoices",
+              "reference/payments",
+              "reference/products",
+              "reference/inventory",
+              "reference/collections",
+              "reference/users",
+              "reference/dashboard"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Real-time dashboard with inventory status, invoice summaries, and client demand analytics",
+    "Full client management with blocks/zones and PDF report generation",
+    "Invoice lifecycle management (create, pay, pending, expired, cancel) with Excel export",
+    "Multi-method payment tracking with account management (Zelle, bank transfers, etc.)",
+    "Product catalog with dollar exchange rate management and price history",
+    "Inventory tracking with low-stock alerts and restocking history",
+    "Automated collections system with templated WhatsApp-style messages",
+    "Role-based user management and administration",
+    "Real-time notifications via Socket.IO",
+    "Excel and PDF report exports across all modules"
+  ],
+  "publicApiSurface": [
+    "GET /dashboard — summary metrics for a date range",
+    "GET /dashboard/clients-demand — top clients and demand buckets",
+    "POST /dashboard/export/v2 — export invoice report as Excel",
+    "GET /clients — list all clients",
+    "GET /clients/excel — export clients as Excel",
+    "POST /clients — create client",
+    "PUT /clients/:id — update client",
+    "DELETE /clients/:id — delete client",
+    "GET /clients/blocks — list geographic blocks",
+    "POST /clients/report — generate client PDF report",
+    "GET /invoices — list all invoices",
+    "GET /invoices/paginated — paginated & filtered invoices",
+    "GET /invoices/statistics — invoice statistics by date range",
+    "GET /invoices/expired — list expired invoices",
+    "POST /invoices — create invoice",
+    "PUT /invoices/:id — update invoice",
+    "PUT /invoices/pay/:id — mark invoice as paid",
+    "DELETE /invoices/:id — delete invoice",
+    "GET /payments — list all payments",
+    "GET /payments/paginated — paginated & filtered payments",
+    "POST /payments — register payment",
+    "POST /payments/associate — associate payment with invoice",
+    "PUT /payments/disassociate — disassociate payment from invoice",
+    "PUT /payments/zelle/:id — confirm Zelle payment",
+    "DELETE /payments/:id — delete payment",
+    "GET /payments/accounts — list payment accounts",
+    "POST /payments/accounts — create payment account",
+    "GET /products — list all products",
+    "GET /products/type — list product types",
+    "GET /products/dolar — get current dollar exchange rate",
+    "POST /products/dolar — update dollar exchange rate",
+    "POST /products/dolar/automatic — auto-update dollar rate",
+    "POST /products — create product",
+    "PUT /products/:id — update product",
+    "DELETE /products/:id — delete product",
+    "GET /inventory — list inventory",
+    "GET /inventory/history — inventory change history",
+    "POST /inventory — add inventory entry",
+    "PUT /inventory/:id — update inventory entry",
+    "DELETE /inventory/:id — delete inventory entry",
+    "GET /collection — list collection records",
+    "GET /collection/messages — list collection message templates",
+    "POST /collection/messages — create message template",
+    "POST /collection/send-messages — send collection messages to clients",
+    "GET /users — list all users",
+    "POST /users — create user",
+    "PUT /users/:id — update user",
+    "DELETE /users/:id — delete user",
+    "GET /users/roles — list available roles"
+  ]
+}
